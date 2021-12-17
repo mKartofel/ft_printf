@@ -6,14 +6,13 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 10:22:15 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/16 12:08:40 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2021/12/17 12:27:02 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdarg.h>
+#include "../includes/ft_printf.h"
+
 #include<stdio.h>
-
-
 void	ecritentier(int n) 
 {
 int m=n%10;
@@ -25,11 +24,12 @@ if (n>=10)
 putchar ( m + '0' ) ;
 }
 
+typedef void (*func_ptr)(void *);
+typedef void (**ptr_to_func_ptr)(void *);
 
 int ft_printf(const char *fmt, ...)
 {
 	va_list ap;
-	char *vals;
 	int i;
 	va_start(ap, fmt);
 
@@ -38,17 +38,26 @@ int ft_printf(const char *fmt, ...)
 	{
 		if (fmt[i] == '%' && fmt[i+1])
 		{
-			if (fmt[i+1] == 'd') 
-				ecritentier(va_arg(ap, int));
+			if (fmt[i+1] == 'd' || fmt[i+1] == 'i') 
+				ft_putnbr_fd(va_arg(ap, int), 1);
 			else if (fmt[i+1] == 's')
-				for( vals = va_arg(ap, char *); *vals; vals++)
-					putchar(*vals);
+				ft_putstr_fd(va_arg(ap, char *), 1);
+			else if (fmt[i+1] == 'c')
+				ft_putchar_fd(va_arg(ap, int), 1);
+			else if (fmt[i+1] == 'p')
+			{
+				ft_putstr_fd("0x", 1);
+				ft_putnbr_base( (unsigned long long)va_arg(ap, void *), "0123456789abcdef");
+			}
+			else if (fmt[i+1] == 'u') 
+				ft_put_uint_fd(va_arg(ap, unsigned int), 1);
+				
 			else 
 				break;
 			i++;
 		}	
 		else
-			putchar(fmt[i]);
+			ft_putchar_fd(fmt[i], 1);
 		i++;
 	}
 	va_end(ap);
@@ -73,10 +82,3 @@ for( p = fmt ; *p ; p++)
 	}
 }
 va_end(pa);}
-
-
-int main() {
-ft_printf("debut format entier %d puis chaine %s\n",  3, "la chaine");
-ft_printf2("debut format entier %d puis chaine %s\n",  3, "la chaine");
-printf("debut format entier %d puis chaine %s\n",  3, "la chaine");
-return 0; }

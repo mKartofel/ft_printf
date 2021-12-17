@@ -6,11 +6,13 @@
 #    By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 11:27:08 by vfiszbin          #+#    #+#              #
-#    Updated: 2021/12/16 12:08:47 by vfiszbin         ###   ########.fr        #
+#    Updated: 2021/12/17 12:18:11 by vfiszbin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = 	ft_printf.c\
+SRCS = 	srcs/ft_printf.c\
+		srcs/ft_putnbr_base.c\
+		srcs/ft_put_uint_fd.c\
 
 INCLUDES = -I./includes
 
@@ -34,7 +36,7 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-clean: #rm libft.a aussi ?
+clean: #rm libft.a aussi ? !!!!
 	${MAKE} clean -C ./libft
 	${RM} ${OBJS}
 
