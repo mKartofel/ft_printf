@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 10:22:15 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/17 12:27:02 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2021/12/18 09:38:35 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,14 @@ int ft_printf(const char *fmt, ...)
 			else if (fmt[i+1] == 'p')
 			{
 				ft_putstr_fd("0x", 1);
-				ft_putnbr_base( (unsigned long long)va_arg(ap, void *), "0123456789abcdef");
+				ft_putptr_base( (unsigned long long)va_arg(ap, void *), "0123456789abcdef");
 			}
 			else if (fmt[i+1] == 'u') 
 				ft_put_uint_fd(va_arg(ap, unsigned int), 1);
-				
+			else if (fmt[i+1] == 'x')
+				ft_putnbr_base(va_arg(ap, int), "0123456789abcdef");
+			else if (fmt[i+1] == '%')
+				ft_putchar_fd('%', 1);
 			else 
 				break;
 			i++;

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putptr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/18 09:32:30 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/18 09:35:31 by vfiszbin         ###   ########.fr       */
+/*   Created: 2021/12/17 11:51:21 by vfiszbin          #+#    #+#             */
+/*   Updated: 2021/12/18 09:37:19 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	check_init_error(char *base)
+int	check_init_error2(char *base)
 {
 	int	i;
 	int	j;
@@ -38,13 +38,13 @@ int	check_init_error(char *base)
 	return (0);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+void	ft_putptr_base(unsigned long long nbr, char *base)
 {
 	int		base_len;
 	long	num;
 
 	num = nbr;
-	if (check_init_error(base) == 0)
+	if (check_init_error2(base) == 0)
 	{
 		if (num < 0)
 		{
