@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_printnbr_base.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 09:32:30 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/18 09:35:31 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2021/12/18 12:49:06 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,17 @@ int	check_init_error(char *base)
 	return (0);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+void	ft_printnbr_base(unsigned int nbr, char *base, int *nb_char)
 {
-	int		base_len;
-	long	num;
+	unsigned int		base_len;
+	unsigned int num;
 
 	num = nbr;
 	if (check_init_error(base) == 0)
 	{
 		if (num < 0)
 		{
-			ft_putchar_fd('-', 1);
+			ft_printchar_fd('-', 1, nb_char);
 			num = num * (-1);
 		}
 		base_len = 0;
@@ -56,10 +56,10 @@ void	ft_putnbr_base(int nbr, char *base)
 			base_len++;
 		if (num >= base_len)
 		{
-			ft_putnbr_base(num / base_len, base);
-			ft_putnbr_base(num % base_len, base);
+			ft_printnbr_base(num / base_len, base, nb_char);
+			ft_printnbr_base(num % base_len, base, nb_char);
 		}
 		if (num < base_len)
-			ft_putchar_fd(base[num], 1);
+			ft_printchar_fd(base[num], 1, nb_char);
 	}
 }

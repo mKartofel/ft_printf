@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr_base.c                                   :+:      :+:    :+:   */
+/*   ft_printptr_base.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 11:51:21 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/18 09:37:19 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2021/12/18 12:37:14 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,18 @@ int	check_init_error2(char *base)
 	return (0);
 }
 
-void	ft_putptr_base(unsigned long long nbr, char *base)
+void	ft_printptr_base(unsigned long long nbr, char *base, int *nb_char)
 {
-	int		base_len;
-	long	num;
+	unsigned long long	base_len;
+	unsigned long long	num;
 
+	//printf("\n%lu\n", nbr);
 	num = nbr;
 	if (check_init_error2(base) == 0)
 	{
 		if (num < 0)
 		{
-			ft_putchar_fd('-', 1);
+			ft_printchar_fd('-', 1, nb_char);
 			num = num * (-1);
 		}
 		base_len = 0;
@@ -56,10 +57,10 @@ void	ft_putptr_base(unsigned long long nbr, char *base)
 			base_len++;
 		if (num >= base_len)
 		{
-			ft_putnbr_base(num / base_len, base);
-			ft_putnbr_base(num % base_len, base);
+			ft_printptr_base(num / base_len, base, nb_char);
+			ft_printptr_base(num % base_len, base, nb_char);
 		}
 		if (num < base_len)
-			ft_putchar_fd(base[num], 1);
+			ft_printchar_fd(base[num], 1, nb_char);
 	}
 }

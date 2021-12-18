@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 11:38:13 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/18 09:35:03 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2021/12/18 12:46:58 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 # include "../libft/libft.h"
 
 int		ft_printf(const char *fmt, ...);
-void	ft_printf2(char *fmt, ...);
-void	ft_putnbr_base(int nbr, char *base);
-void	ft_putptr_base(unsigned long long nbr, char *base);
-void	ft_put_uint_fd(unsigned int n, int fd);
+void	ft_printstr_fd(char *s, int fd, int *nb_char);
+void	ft_printchar_fd(char c, int fd, int *nb_char);
+void	ft_printnbr_fd(int n, int fd, int *nb_char);
+void	ft_printnbr_base(unsigned int nbr, char *base, int *nb_char);
+void	ft_printptr_base(unsigned long long nbr, char *base, int *nb_char);
+void	ft_print_uint_fd(unsigned int n, int fd, int *nb_char);
 
 #endif

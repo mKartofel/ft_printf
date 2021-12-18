@@ -6,14 +6,17 @@
 #    By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 11:27:08 by vfiszbin          #+#    #+#              #
-#    Updated: 2021/12/18 09:31:59 by vfiszbin         ###   ########.fr        #
+#    Updated: 2021/12/18 11:47:47 by vfiszbin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = 	srcs/ft_printf.c\
-		srcs/ft_putnbr_base.c\
-		srcs/ft_putptr_base.c\
-		srcs/ft_put_uint_fd.c\
+		srcs/ft_printnbr_base.c\
+		srcs/ft_printptr_base.c\
+		srcs/ft_print_uint_fd.c\
+		srcs/ft_printchar_fd.c\
+		srcs/ft_printnbr_fd.c\
+		srcs/ft_printstr_fd.c\
 
 INCLUDES = -I./includes
 
