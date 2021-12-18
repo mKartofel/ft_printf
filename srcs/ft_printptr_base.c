@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 11:51:21 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/18 12:37:14 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2021/12/18 14:52:22 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_printptr_base(unsigned long long nbr, char *base, int *nb_char)
 	unsigned long long	base_len;
 	unsigned long long	num;
 
-	//printf("\n%lu\n", nbr);
 	num = nbr;
 	if (check_init_error2(base) == 0)
 	{

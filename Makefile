@@ -6,7 +6,7 @@
 #    By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/16 11:27:08 by vfiszbin          #+#    #+#              #
-#    Updated: 2021/12/18 11:47:47 by vfiszbin         ###   ########.fr        #
+#    Updated: 2021/12/18 14:20:13 by vfiszbin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,11 +40,12 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-clean: #rm libft.a aussi ? !!!!
+clean:
 	${MAKE} clean -C ./libft
 	${RM} ${OBJS}
 
 fclean: clean
+	${MAKE} fclean -C ./libft
 	${RM} ${NAME}
 
 re: fclean all

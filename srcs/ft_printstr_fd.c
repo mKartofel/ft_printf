@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 11:28:57 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/18 11:59:32 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2021/12/18 14:54:15 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	ft_printstr_fd(char *s, int fd, int *nb_char)
 {
 	int	i;
 
-	if (!s){
+	if (!s)
+	{
 		ft_printstr_fd("(null)", 1, nb_char);
 		return ;
 	}
-		
 	i = 0;
 	while (s[i])
 	{

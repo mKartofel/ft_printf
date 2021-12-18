@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 09:32:30 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/18 12:49:06 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2021/12/18 14:51:57 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ int	check_init_error(char *base)
 
 void	ft_printnbr_base(unsigned int nbr, char *base, int *nb_char)
 {
-	unsigned int		base_len;
-	unsigned int num;
+	unsigned int	base_len;
+	unsigned int	num;
 
 	num = nbr;
 	if (check_init_error(base) == 0)

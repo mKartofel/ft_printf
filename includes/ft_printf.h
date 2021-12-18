@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 11:38:13 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/18 12:46:58 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2021/12/18 14:45:38 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdarg.h>
 # include "../libft/libft.h"
+# define HEXA "0123456789abcdef"
+# define HEXAMAJ "0123456789ABCDEF"
 
 int		ft_printf(const char *fmt, ...);
 void	ft_printstr_fd(char *s, int fd, int *nb_char);
