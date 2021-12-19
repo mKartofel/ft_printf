@@ -46,11 +46,6 @@ void	ft_printptr_base(unsigned long long nbr, char *base, int *nb_char)
 	num = nbr;
 	if (check_init_error2(base) == 0)
 	{
-		if (num < 0)
-		{
-			ft_printchar_fd('-', 1, nb_char);
-			num = num * (-1);
-		}
 		base_len = 0;
 		while (base[base_len])
 			base_len++;
