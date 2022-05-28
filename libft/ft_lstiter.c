@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 19:49:51 by vfiszbin          #+#    #+#             */
-/*   Updated: 2022/05/26 09:37:08 by vfiszbin         ###   ########.fr       */
+/*   Created: 2022/05/26 10:49:18 by vfiszbin          #+#    #+#             */
+/*   Updated: 2022/05/26 11:21:49 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*Allocates sufficient memory for a copy of the string s, does the copy, 
-and returns a pointer to it.  The pointer may subsequently be
-used as an argument to the function free*/
-char	*ft_strdup(const char *s)
+/*Iterates the list ’lst’ and applies the function
+’f’ on the content of each node*/
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*new_str;
-	int		i;
-
-	new_str = ft_calloc((ft_strlen(s) + 1), sizeof(char));
-	if (!new_str)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	if (!f)
+		return ;
+	while (lst)
 	{
-		new_str[i] = s[i];
-		i++;
+		(*f)(lst->content);
+		lst = lst->next;
 	}
-	new_str[i] = '\0';
-	return (new_str);
 }

@@ -12,6 +12,7 @@
 
 #include "libft.h"
 
+/*Tests for any character for which isupper or islower is true*/
 int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))

@@ -6,12 +6,14 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 18:57:51 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/05 19:07:14 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2022/05/26 09:18:10 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*Converts the initial portion of the string pointed to by nptr to int 
+representation*/
 int	ft_atoi(const char *nptr)
 {
 	int	i;

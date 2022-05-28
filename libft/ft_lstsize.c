@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 19:49:51 by vfiszbin          #+#    #+#             */
-/*   Updated: 2022/05/26 09:37:08 by vfiszbin         ###   ########.fr       */
+/*   Created: 2022/05/26 10:16:33 by vfiszbin          #+#    #+#             */
+/*   Updated: 2022/05/26 10:19:48 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*Allocates sufficient memory for a copy of the string s, does the copy, 
-and returns a pointer to it.  The pointer may subsequently be
-used as an argument to the function free*/
-char	*ft_strdup(const char *s)
+/*Counts the number of nodes in a list*/
+int	ft_lstsize(t_list *lst)
 {
-	char	*new_str;
-	int		i;
+	int	count;
 
-	new_str = ft_calloc((ft_strlen(s) + 1), sizeof(char));
-	if (!new_str)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	count = 0;
+	while (lst)
 	{
-		new_str[i] = s[i];
-		i++;
+		count ++;
+		lst = lst->next;
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	return (count);
 }

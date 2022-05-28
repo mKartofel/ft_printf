@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 19:49:51 by vfiszbin          #+#    #+#             */
-/*   Updated: 2022/05/26 09:37:08 by vfiszbin         ###   ########.fr       */
+/*   Created: 2022/05/26 10:27:52 by vfiszbin          #+#    #+#             */
+/*   Updated: 2022/05/26 10:32:42 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*Allocates sufficient memory for a copy of the string s, does the copy, 
-and returns a pointer to it.  The pointer may subsequently be
-used as an argument to the function free*/
-char	*ft_strdup(const char *s)
+/*Adds the node ’new’ at the end of the list*/
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*new_str;
-	int		i;
+	t_list	*last_node;
 
-	new_str = ft_calloc((ft_strlen(s) + 1), sizeof(char));
-	if (!new_str)
-		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		new_str[i] = s[i];
-		i++;
-	}
-	new_str[i] = '\0';
-	return (new_str);
+	last_node = ft_lstlast(*lst);
+	if (last_node == NULL)
+		*lst = new;
+	else
+		last_node->next = new;
 }

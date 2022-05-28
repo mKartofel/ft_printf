@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 15:01:49 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/13 20:07:15 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2022/05/26 09:34:34 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,10 @@ static void	*free_tab(char **tab, int j)
 	return (NULL);
 }
 
+/*Allocates (with malloc) and returns an array
+of strings obtained by splitting ’s’ using the
+character ’c’ as a delimiter.  The array must end
+with a NULL pointer*/
 char	**ft_split(char const *s, char c)
 {
 	int		i;

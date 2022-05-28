@@ -6,12 +6,15 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:06:48 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/06 13:02:41 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2022/05/26 09:38:49 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*Allocates (with malloc) and returns a new
+string, which is the result of the concatenation
+of ’s1’ and ’s2’*/
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;

@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 15:54:18 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/06 17:46:35 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2022/05/26 09:22:49 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ static char	*ft_zero_itoa(void)
 	return (ret_str);
 }
 
+/*Allocates (with malloc) and returns a string
+representing the integer received as an argument.
+Negative numbers must be handled*/
 char	*ft_itoa(int n)
 {
 	int		len;

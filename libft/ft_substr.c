@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 18:38:06 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/13 20:16:19 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2022/05/26 09:47:55 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ static char	*empty_malloc(void)
 	return (ret_str);
 }
 
+/*Allocates (with malloc) and returns a substring
+from the string ’s’.
+The substring begins at index ’start’ and is of
+maximum size ’len’*/
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ret_str;

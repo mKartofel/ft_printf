@@ -6,7 +6,7 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:23:13 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/13 19:17:51 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2022/05/26 09:47:30 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ static char	*empty_malloc(void)
 	return (ret_str);
 }
 
+/*Allocates (with malloc) and returns a copy of
+’s1’ with the characters specified in ’set’ removed
+from the beginning and the end of the string*/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;

@@ -6,12 +6,15 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 18:38:53 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/06 20:14:30 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2022/05/26 09:45:48 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*Locates the first occurrence of the null-terminated string little 
+in the string big, where not more than len characters are
+searched. Characters that appear after a ‘\0’ character are not searched*/
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

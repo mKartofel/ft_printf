@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 19:49:51 by vfiszbin          #+#    #+#             */
-/*   Updated: 2022/05/26 09:37:08 by vfiszbin         ###   ########.fr       */
+/*   Created: 2022/05/26 10:41:04 by vfiszbin          #+#    #+#             */
+/*   Updated: 2022/05/26 11:21:35 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*Allocates sufficient memory for a copy of the string s, does the copy, 
-and returns a pointer to it.  The pointer may subsequently be
-used as an argument to the function free*/
-char	*ft_strdup(const char *s)
+/*Deletes and frees the given node and every
+successor of that node, using the function ’del’
+and free.
+Finally, the pointer to the list must be set to
+NULL*/
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char	*new_str;
-	int		i;
+	t_list	*tmp;
+	t_list	*cur;
 
-	new_str = ft_calloc((ft_strlen(s) + 1), sizeof(char));
-	if (!new_str)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	if (!del || !lst || !*lst)
+		return ;
+	cur = *lst;
+	while (cur)
 	{
-		new_str[i] = s[i];
-		i++;
+		tmp = cur;
+		cur = cur->next;
+		ft_lstdelone(tmp, del);
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	*lst = NULL;
 }

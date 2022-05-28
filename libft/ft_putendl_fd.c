@@ -6,12 +6,14 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 18:35:53 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/06 18:38:00 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2022/05/26 09:31:34 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*Outputs the string ’s’ to the given file descriptor
+followed by a newline*/
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s)

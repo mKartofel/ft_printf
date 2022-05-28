@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/05 19:49:51 by vfiszbin          #+#    #+#             */
-/*   Updated: 2022/05/26 09:37:08 by vfiszbin         ###   ########.fr       */
+/*   Created: 2022/05/25 19:34:55 by vfiszbin          #+#    #+#             */
+/*   Updated: 2022/05/26 09:55:29 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*Allocates sufficient memory for a copy of the string s, does the copy, 
-and returns a pointer to it.  The pointer may subsequently be
-used as an argument to the function free*/
-char	*ft_strdup(const char *s)
+/*Allocates (with malloc) and returns a new node.
+The member variable ’content’ is initialized with
+the value of the parameter ’content’.  The variable
+’next’ is initialized to NULL*/
+t_list	*ft_lstnew(void *content)
 {
-	char	*new_str;
-	int		i;
+	t_list	*new_el;
 
-	new_str = ft_calloc((ft_strlen(s) + 1), sizeof(char));
-	if (!new_str)
+	new_el = malloc(sizeof(t_list));
+	if (!new_el)
 		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		new_str[i] = s[i];
-		i++;
-	}
-	new_str[i] = '\0';
-	return (new_str);
+	new_el->content = content;
+	new_el->next = NULL;
+	return (new_el);
 }

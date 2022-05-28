@@ -6,7 +6,7 @@
 #    By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/22 19:49:42 by vfiszbin          #+#    #+#              #
-#    Updated: 2021/12/13 20:22:27 by vfiszbin         ###   ########.fr        #
+#    Updated: 2022/05/26 11:08:42 by vfiszbin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,18 @@ SRCS = 	ft_isdigit.c\
 
 OBJS = ${SRCS:.c=.o}
 
+BONUS = ft_lstnew.c\
+		ft_lstadd_front.c\
+		ft_lstsize.c\
+		ft_lstlast.c\
+		ft_lstadd_back.c\
+		ft_lstdelone.c\
+		ft_lstclear.c\
+		ft_lstiter.c\
+		ft_lstmap.c\
+
+OBJS_BONUS = ${BONUS:.c=.o}
+
 NAME = libft.a
 
 CC = gcc
@@ -64,11 +76,14 @@ ${NAME}: ${OBJS}
 all: ${NAME}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} $(OBJS_BONUS)
 
 fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bonus: ${OBJS} ${OBJS_BONUS}
+	ar rc ${NAME} ${OBJS} ${OBJS_BONUS}
+
+.PHONY: all clean fclean re bonus

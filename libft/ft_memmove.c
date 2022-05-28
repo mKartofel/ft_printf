@@ -6,12 +6,14 @@
 /*   By: vfiszbin <vfiszbin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 16:46:10 by vfiszbin          #+#    #+#             */
-/*   Updated: 2021/12/06 19:54:42 by vfiszbin         ###   ########.fr       */
+/*   Updated: 2022/05/26 09:29:44 by vfiszbin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*Copies n bytes from string src to string dst. The two strings may overlap;
+the copy is always done in a non-destructive manner*/
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	size_t			i;
